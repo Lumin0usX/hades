@@ -727,45 +727,58 @@ sup.cite { color: var(--gold); font-size: 0.6em; padding-left: 0.15em; }
   opacity: 0.85;
 }
 
+/* HADES headline — always one line, gradient on the heading itself.
+   Size and tracking chosen together so the 5 letters fit even on the
+   narrow side-by-side text column at intermediate viewports. */
 .hero__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(3rem, 11vw, 9rem);
-  line-height: 0.95;
+  font-size: clamp(2rem, 7.5vw, 7rem);
+  line-height: 1;
   margin-bottom: 2.2rem;
-  color: var(--bone);
-  text-shadow:
-    0 0 2px  rgba(244, 235, 225, 0.35),
-    0 0 30px rgba(204, 120, 92, 0.30),
-    0 0 90px rgba(204, 120, 92, 0.20);
-}
-.hero__title span {
-  display: inline-block;
-  letter-spacing: 0.06em;
-  padding: 0 0.18em;
+  letter-spacing: 0.24em;
+  text-indent: 0.24em;            /* re-centers tracked text */
+  white-space: nowrap;            /* never wrap onto two lines */
   background: linear-gradient(180deg, var(--bone) 0%, var(--gold-warm) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   filter: drop-shadow(0 0 24px rgba(201, 162, 39, 0.18));
+  text-shadow:
+    0 0 2px  rgba(244, 235, 225, 0.35),
+    0 0 30px rgba(204, 120, 92, 0.30),
+    0 0 90px rgba(204, 120, 92, 0.20);
 }
 
+/* Subtitle — strict two-color line. Explicit -webkit-text-fill-color guards
+   against any inherited transparent fill from gradient-clipped headings. */
 .hero__subtitle {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   letter-spacing: 0.16em;
   color: var(--bone-mute);
+  -webkit-text-fill-color: var(--bone-mute);
   max-width: 60ch;
   margin: 0 auto;
+  text-decoration: none;
 }
-.hero__subtitle em {
+.hero__sub-greek {
   font-style: italic;
   color: var(--gold);
+  -webkit-text-fill-color: var(--gold);
   letter-spacing: 0.08em;
   font-size: 1.15em;
   margin-right: 0.15em;
+  background: none;
+  filter: none;
+}
+.hero__sub-rest {
+  color: var(--bone-mute);
+  -webkit-text-fill-color: var(--bone-mute);
+  background: none;
+  filter: none;
 }
 
 .hero__scroll {

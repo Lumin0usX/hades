@@ -21,7 +21,6 @@
      ============================================================ */
   const splash  = document.getElementById('splash');
   const credit1 = document.getElementById('credit-1');
-  const credit2 = document.getElementById('credit-2');
   const canvas  = document.getElementById('embers');
 
   function revealSite() {
@@ -47,10 +46,9 @@
   if (reducedMotion) {
     dismissSplash(true);
   } else if (splash) {
-    // Timing: 0.4s pause → credit1 (4s) → 0.4s gap → credit2 (4s) → dismiss (1.1s fade)
-    const T_START_1 = 400;
-    const T_START_2 = T_START_1 + 4000 + 400;   // 4800
-    const T_DISMISS = T_START_2 + 4000;          // 8800
+    // Timing: 0.4s black beat → credit (4s arc: 1.2s in / 1.6s hold / 1.2s out) → dismiss (1.1s fade)
+    const T_START   = 400;
+    const T_DISMISS = T_START + 4000;   // 4400
 
     const timers = [];
     const sched = (ms, fn) => timers.push(setTimeout(fn, ms));
@@ -60,8 +58,7 @@
       dismissSplash(false);
     };
 
-    sched(T_START_1, () => credit1 && credit1.classList.add('show'));
-    sched(T_START_2, () => credit2 && credit2.classList.add('show'));
+    sched(T_START,   () => credit1 && credit1.classList.add('show'));
     sched(T_DISMISS, () => dismissSplash(false));
 
     // Skip controls
