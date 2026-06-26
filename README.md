@@ -1,8 +1,10 @@
 # HADES &middot; Lord of the Underworld
 
+### &rarr; **[View live site](https://lumin0usx.github.io/hades/)** &middot; `lumin0usx.github.io/hades`
+
 A dark, museum-grade web exhibit on Hades &mdash; eldest son of Cronus, ruler of the realm beneath the earth. Seven chapters: **Threshold &middot; Origin &middot; Major Myths &middot; Symbols &middot; Family &middot; Modern Legacy &middot; Sources**, with primary-source citations throughout.
 
-Opens with a cinematic two-credit splash sequence (warm-ember atmosphere, canvas-rendered embers, breathing vignette) and reveals into an editorial site styled in black, antique gold, and ember orange.
+Opens with a cinematic splash sequence (warm-ember atmosphere, canvas-rendered embers, breathing vignette) and reveals into an editorial site styled in black, antique gold, and ember orange. Real public-domain artwork throughout (Wikimedia Commons + NASA), each plate fully credited.
 
 ---
 
@@ -186,4 +188,4 @@ Content is cross-referenced against primary sources: Homer's *Iliad*, Hesiod's *
 
 ## Credits
 
-Built by **Lumin0usx** (Karn Boriboon) with **Claude**, Anthropic.
+Built by **Lumin0usx** (Karn Boriboon).
