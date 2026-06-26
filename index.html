@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050302">
+  <meta name="description" content="HADES — Lord of the Underworld. A dark, museum-grade exhibit of the eldest son of Cronus: his origin, his myths, his symbols, his kin, and his survivals in the modern world.">
+  <title>HADES &middot; Lord of the Underworld</title>
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+  <link rel="preconnect" href="https://assets.science.nasa.gov" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       SPLASH OVERLAY  (intro sequence)
+       ============================================================ -->
+  <div id="splash" role="presentation" aria-hidden="true">
+    <canvas id="embers"></canvas>
+    <div class="horizon"></div>
+
+    <div class="credit" id="credit-1">
+      <span class="line">
+        Built with <span class="accent">Claude</span><span class="glyph">&middot;</span><span class="accent">Anthropic</span>
+      </span>
+    </div>
+
+    <div class="credit" id="credit-2">
+      <span class="line">Developed by <span class="accent">Lumin0usx</span></span>
+      <span class="subtext">Karn Boriboon</span>
+    </div>
+
+    <div class="skip-hint">Press any key to skip</div>
+  </div>
+
+
+  <!-- ============================================================
+       SIDE NAVIGATION
+       ============================================================ -->
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <nav id="sidenav" aria-label="Section navigation">
+    <ol>
+      <li><a href="#hero" data-num="I"><span class="nav-label">Threshold</span></a></li>
+      <li><a href="#origin" data-num="II"><span class="nav-label">Origin</span></a></li>
+      <li><a href="#myths" data-num="III"><span class="nav-label">Major Myths</span></a></li>
+      <li><a href="#symbols" data-num="IV"><span class="nav-label">Symbols</span></a></li>
+      <li><a href="#family" data-num="V"><span class="nav-label">Family</span></a></li>
+      <li><a href="#legacy" data-num="VI"><span class="nav-label">Legacy</span></a></li>
+      <li><a href="#sources" data-num="VII"><span class="nav-label">Sources</span></a></li>
+    </ol>
+  </nav>
+
+
+  <!-- ============================================================
+       MAIN SITE
+       ============================================================ -->
+  <main id="site">
+
+
+    <!-- ===================== I · HERO ===================== -->
+    <header id="hero" class="section section--hero">
+      <div class="hero__rule" aria-hidden="true"></div>
+
+      <!-- Bold aesthetic risk: floor-to-ceiling Greek inscription -->
+      <div class="hero__greek" aria-hidden="true">ΑΙΔΗΣ</div>
+
+      <div class="hero__chapter" aria-hidden="true">
+        <span>Chapter</span>
+        <span class="hero__chapter-num">I</span>
+        <span>The Unseen One</span>
+      </div>
+
+      <div class="hero__layout">
+
+        <!-- Hero artwork: Carracci, Pluto (1591–93) -->
+        <figure class="hero__art reveal">
+          <div class="hero__art-frame">
+            <img class="plate__img hero__art-img"
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Agostino_carracci%2C_plutone%2C_1591-93.jpg/1280px-Agostino_carracci%2C_plutone%2C_1591-93.jpg"
+                 alt="Pluto, painted by Agostino Carracci, 1591–1593: the god of the underworld reclining with the three-headed hound Cerberus at his side."
+                 loading="eager"
+                 decoding="async"
+                 fetchpriority="high">
+            <div class="plate__fallback" aria-hidden="true">
+              <span class="plate__kicker">Hero Plate</span>
+              <span class="plate__title">Pluto</span>
+              <span class="plate__artist">Agostino Carracci</span>
+              <span class="plate__meta">1591&ndash;1593 &middot; Galleria Estense, Modena</span>
+            </div>
+          </div>
+          <figcaption class="hero__art-caption">
+            <span class="hero__art-title"><em>Pluto</em> &middot; Agostino Carracci, 1591&ndash;1593</span>
+            <span class="hero__art-source">Galleria Estense, Modena &middot; Wikimedia Commons, CC&nbsp;BY-SA&nbsp;4.0</span>
+          </figcaption>
+        </figure>
+
+        <div class="hero__text">
+          <p class="hero__eyebrow">An exhibit in seven chapters</p>
+          <h1 class="hero__title">
+            <span>H</span><span>A</span><span>D</span><span>E</span><span>S</span>
+          </h1>
+          <p class="hero__subtitle">
+            <em>Ἅιδης</em> &mdash; the unseen &middot; Lord of the realm beneath the earth
+          </p>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Descend</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </header>
+
+
+    <!-- ===================== II · ORIGIN ===================== -->
+    <section id="origin" class="section section--origin">
+      <div class="section__head reveal">
+        <span class="section__num">II</span>
+        <h2 class="section__title">Origin</h2>
+        <p class="section__lede">Son of Cronus, eldest of the swallowed. The lots fell, and the dead were given a king.</p>
+      </div>
+
+      <div class="origin__grid">
+
+        <article class="origin__prose reveal">
+          <p class="prose">
+            <span class="dropcap">H</span>ades is the firstborn son of the Titans Cronus and Rhea&nbsp;&mdash; first to be devoured, last to be freed. When Cronus, fearing the prophecy that his own children would unseat him, swallowed each newborn in turn, Hades and his elder siblings spent their childhood inside their father's body, until Zeus, hidden away on Crete, returned with a draught that forced Cronus to disgorge them.
+          </p>
+
+          <p class="prose">
+            After the Titanomachy&nbsp;&mdash; the ten-year war that broke the old order&nbsp;&mdash; the three sons of Cronus divided the cosmos by lot. To Zeus fell the bright sky; to Poseidon the gray sea; and to Hades the realm beneath the earth: a kingdom no light visits, where every mortal soul will, in time, come down to him.
+          </p>
+
+          <blockquote class="pullquote">
+            <p>&ldquo;We are three brothers&hellip; and all things were divided into three parts, and each was given his own domain. To me fell the gray sea forever; to Hades fell the misty darkness.&rdquo;</p>
+            <cite>Homer, <em>Iliad</em> XV.<span class="num">187&ndash;193</span></cite>
+          </blockquote>
+
+          <p class="prose">
+            Hesiod records the same descent in his cosmogony: Cronus, son of Heaven, supplanted in his turn by his own children&nbsp;<sup class="cite">[1]</sup>. From this division, the Greek world ordered itself&nbsp;&mdash; sky above, sea between, and beneath them both the silent dominion of Hades.
+          </p>
+
+          <p class="footnote">
+            <sup>[1]</sup> Hesiod, <em>Theogony</em> 453&ndash;506.
+          </p>
+        </article>
+
+        <aside class="origin__plate reveal">
+          <figure class="plate plate--portrait">
+            <div class="plate__frame">
+              <img class="plate__img"
+                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg/1280px-Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg"
+                   alt="Saturn Devouring His Son, by Francisco de Goya, 1819–1823: the Titan Cronus consuming one of his offspring, hands gripping the small body."
+                   loading="lazy"
+                   decoding="async">
+              <div class="plate__fallback" aria-hidden="true">
+                <span class="plate__kicker">Plate I</span>
+                <span class="plate__title">Saturn Devouring His Son</span>
+                <span class="plate__artist">Francisco de Goya</span>
+                <span class="plate__meta">1819&ndash;1823 &middot; Museo del Prado</span>
+              </div>
+            </div>
+            <figcaption class="plate__caption">
+              <span class="plate__cap-title">Plate I &middot; <em>Saturn Devouring His Son</em></span>
+              <span class="plate__cap-credit">Francisco de Goya &middot; 1819&ndash;1823 &middot; Museo del Prado, Madrid</span>
+              <span class="plate__cap-license">Public Domain &middot; via Wikimedia Commons</span>
+              <span class="plate__cap-note">Goya's late &ldquo;Black Painting&rdquo;: the Titan Cronus consuming one of his children&nbsp;&mdash; the act that bound Hades and his siblings within their father's body until their release.</span>
+            </figcaption>
+          </figure>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <!-- ===================== III · MAJOR MYTHS ===================== -->
+    <section id="myths" class="section section--myths">
+      <div class="section__head reveal">
+        <span class="section__num">III</span>
+        <h2 class="section__title">Major Myths</h2>
+        <p class="section__lede">Three episodes that shape what the Greeks meant by their Lord of the Dead.</p>
+      </div>
+
+      <!-- Myth 1: Persephone — Bernini -->
+      <article class="myth myth--left" id="myth-persephone">
+        <div class="myth__plate reveal">
+          <figure class="plate plate--portrait">
+            <div class="plate__frame">
+              <img class="plate__img"
+                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rape_of_Proserpina_by_Gian_Lorenzo_Bernini%2C_1621-1622%2C_marble_-_Galleria_Borghese_-_Rome%2C_Italy_-_DSC04604.jpg/1280px-Rape_of_Proserpina_by_Gian_Lorenzo_Bernini%2C_1621-1622%2C_marble_-_Galleria_Borghese_-_Rome%2C_Italy_-_DSC04604.jpg"
+                   alt="The Rape of Proserpina, a marble sculpture by Gian Lorenzo Bernini, 1621–1622: Pluto carrying off the daughter of Demeter, his fingers pressing into her marble thigh."
+                   loading="lazy"
+                   decoding="async">
+              <div class="plate__fallback" aria-hidden="true">
+                <span class="plate__kicker">Plate II</span>
+                <span class="plate__title">The Rape of Proserpina</span>
+                <span class="plate__artist">Gian Lorenzo Bernini</span>
+                <span class="plate__meta">1621&ndash;1622 &middot; Galleria Borghese, Rome</span>
+              </div>
+            </div>
+            <figcaption class="plate__caption">
+              <span class="plate__cap-title">Plate II &middot; <em>The Rape of Proserpina</em></span>
+              <span class="plate__cap-credit">Gian Lorenzo Bernini &middot; 1621&ndash;1622 &middot; Galleria Borghese, Rome</span>
+              <span class="plate__cap-license">Photo by Daderot &middot; via Wikimedia Commons, CC0 1.0</span>
+              <span class="plate__cap-note">Bernini's Baroque masterpiece: Pluto's hand sinking into the marble flesh of Proserpina&nbsp;&mdash; the impossible illusion of stone becoming skin.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="myth__text reveal">
+          <p class="myth__roman">Myth&nbsp;i</p>
+          <h3 class="myth__title">The Abduction of Persephone</h3>
+          <p class="myth__subtitle">&mdash; and the origin of the seasons</p>
+
+          <p class="prose">The seasons begin with an abduction. Persephone, daughter of Demeter, was gathering flowers in a meadow of Nysa when the earth opened beneath her. Hades, in a chariot drawn by black horses, drew her down into his kingdom.</p>
+
+          <p class="prose">Her mother searched the whole earth and, in her grief, withheld the harvest until the world began to starve. Zeus intervened, brokering a return&nbsp;&mdash; but before she went, Hades offered her the seed of a pomegranate. She ate six. By that act she was bound: six months each year she dwells with him as Queen of the Underworld; six months she rises to her mother, and the earth wakes.</p>
+
+          <p class="myth__cite">
+            <em>Homeric Hymn to Demeter</em>; Ovid, <em>Metamorphoses</em> V.<span class="num">385&ndash;571</span>.
+          </p>
+        </div>
+      </article>
+
+      <!-- Myth 2: Orpheus & Eurydice — Corot -->
+      <article class="myth myth--right" id="myth-orpheus">
+        <div class="myth__text reveal">
+          <p class="myth__roman">Myth&nbsp;ii</p>
+          <h3 class="myth__title">Orpheus &amp; Eurydice</h3>
+          <p class="myth__subtitle">&mdash; the one mercy</p>
+
+          <p class="prose">There is one story in which Hades relents. Orpheus, the singer whose music halted rivers and tamed beasts, descended after the death of his wife Eurydice. His song moved the iron of the Underworld: Sisyphus's stone fell still, Tantalus forgot his thirst, the Furies wept.</p>
+
+          <p class="prose">Hades and Persephone, hearing him, granted what they had never granted&nbsp;&mdash; Eurydice was given back, on a single condition. He must lead her up to the light, and not, until they had crossed, look behind him.</p>
+
+          <p class="prose"><em>He looked. She fell back, twice dead, and was gone.</em></p>
+
+          <p class="myth__cite">
+            Virgil, <em>Georgics</em> IV.<span class="num">453&ndash;527</span>; Ovid, <em>Metamorphoses</em> X.<span class="num">1&ndash;85</span>.
+          </p>
+        </div>
+
+        <div class="myth__plate reveal">
+          <figure class="plate">
+            <div class="plate__frame">
+              <img class="plate__img"
+                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Jean-Baptiste-Camille_Corot_-_Orpheus_Leading_Eurydice_from_the_Underworld_-_Google_Art_Project.jpg/1280px-Jean-Baptiste-Camille_Corot_-_Orpheus_Leading_Eurydice_from_the_Underworld_-_Google_Art_Project.jpg"
+                   alt="Orpheus Leading Eurydice from the Underworld, painted by Jean-Baptiste-Camille Corot in 1861: Orpheus, lyre held aloft, leading Eurydice through misted woods toward the daylight."
+                   loading="lazy"
+                   decoding="async">
+              <div class="plate__fallback" aria-hidden="true">
+                <span class="plate__kicker">Plate III</span>
+                <span class="plate__title">Orpheus Leading Eurydice from the Underworld</span>
+                <span class="plate__artist">Jean-Baptiste-Camille Corot</span>
+                <span class="plate__meta">1861 &middot; Museum of Fine Arts, Houston</span>
+              </div>
+            </div>
+            <figcaption class="plate__caption">
+              <span class="plate__cap-title">Plate III &middot; <em>Orpheus Leading Eurydice from the Underworld</em></span>
+              <span class="plate__cap-credit">Jean-Baptiste-Camille Corot &middot; 1861 &middot; Museum of Fine Arts, Houston</span>
+              <span class="plate__cap-license">Public Domain &middot; via Wikimedia Commons (Google Art Project)</span>
+              <span class="plate__cap-note">Corot's misted ascent: Orpheus with his lyre, Eurydice's hand in his, the wood between them and the daylight not yet broken.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- Myth 3: Heracles & Cerberus — Rubens -->
+      <article class="myth myth--left" id="myth-cerberus">
+        <div class="myth__plate reveal">
+          <figure class="plate">
+            <div class="plate__frame">
+              <img class="plate__img"
+                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Peter_Paul_Rubens_-_Hercules_and_Cerberus%2C_1636.jpg/1280px-Peter_Paul_Rubens_-_Hercules_and_Cerberus%2C_1636.jpg"
+                   alt="Hercules and Cerberus, painted by Peter Paul Rubens in 1636: the hero hauling the three-headed hound up from the Underworld, the gates of Hades behind him."
+                   loading="lazy"
+                   decoding="async">
+              <div class="plate__fallback" aria-hidden="true">
+                <span class="plate__kicker">Plate IV</span>
+                <span class="plate__title">Hercules and Cerberus</span>
+                <span class="plate__artist">Peter Paul Rubens</span>
+                <span class="plate__meta">1636 &middot; Museo del Prado, Madrid</span>
+              </div>
+            </div>
+            <figcaption class="plate__caption">
+              <span class="plate__cap-title">Plate IV &middot; <em>Hercules and Cerberus</em></span>
+              <span class="plate__cap-credit">Peter Paul Rubens &middot; c.&nbsp;1636 &middot; Museo del Prado, Madrid</span>
+              <span class="plate__cap-license">Public Domain &middot; via Wikimedia Commons</span>
+              <span class="plate__cap-note">Heracles brings the three-headed hound up into daylight at Taenarum &mdash; the twelfth and final labour.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="myth__text reveal">
+          <p class="myth__roman">Myth&nbsp;iii</p>
+          <h3 class="myth__title">Heracles &amp; Cerberus</h3>
+          <p class="myth__subtitle">&mdash; the twelfth labour</p>
+
+          <p class="prose">The twelfth and final labour was to bring up Cerberus, the three-headed hound of Hades, from the gates of the Underworld and present him living before King Eurystheus.</p>
+
+          <p class="prose">Heracles descended at Taenarum, was initiated into the Eleusinian Mysteries before he went, and met Hades face to face. The Lord of the Dead permitted the labour on a single condition: Heracles must master the beast with bare hands, using no weapon. He did. He dragged Cerberus into the light of day, showed him to the trembling king, and then&nbsp;&mdash; as he had promised&nbsp;&mdash; returned him to his post at the gate.</p>
+
+          <p class="myth__cite">
+            Apollodorus, <em>Bibliotheca</em> 2.5.<span class="num">12</span>.
+          </p>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- ===================== IV · SYMBOLS ===================== -->
+    <section id="symbols" class="section section--symbols">
+      <div class="section__head reveal">
+        <span class="section__num">IV</span>
+        <h2 class="section__title">Symbols</h2>
+        <p class="section__lede">The objects of his dominion. Each carried a meaning a Greek would have read instantly.</p>
+      </div>
+
+      <!-- Lead plate: Attic black-figure amphora — Heracles & Cerberus -->
+      <figure class="section__plate reveal">
+        <div class="section__plate-frame">
+          <img class="plate__img"
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Pittore_andokides%2C_anfora_a_figure_nere_con_eracle_e_cerbero%2C_530_ac._ca%2C_01.JPG/1280px-Pittore_andokides%2C_anfora_a_figure_nere_con_eracle_e_cerbero%2C_530_ac._ca%2C_01.JPG"
+               alt="Attic black-figure amphora by the Andokides Painter, c. 530 BCE, showing Heracles leading Cerberus, the three-headed hound of Hades."
+               loading="lazy"
+               decoding="async">
+          <div class="plate__fallback" aria-hidden="true">
+            <span class="plate__kicker">Plate V</span>
+            <span class="plate__title">Attic black-figure amphora &mdash; Heracles &amp; Cerberus</span>
+            <span class="plate__artist">Attributed to the Andokides Painter</span>
+            <span class="plate__meta">c. 530 BCE &middot; Louvre, Paris</span>
+          </div>
+        </div>
+        <figcaption class="plate__caption section__plate-caption">
+          <span class="plate__cap-title">Plate V &middot; <em>Attic black-figure amphora: Heracles &amp; Cerberus</em></span>
+          <span class="plate__cap-credit">Attributed to the Andokides Painter &middot; c.&nbsp;530 BCE &middot; Louvre, Paris (F&nbsp;204)</span>
+          <span class="plate__cap-license">Public Domain &middot; via Wikimedia Commons</span>
+          <span class="plate__cap-note">A canonical Attic depiction: the three-headed hound led from the gates of the Underworld, his serpentine tails marking him out from mortal dogs.</span>
+        </figcaption>
+      </figure>
+
+      <ol class="symbols">
+
+        <li class="symbol symbol--a reveal">
+          <span class="symbol__glyph" aria-hidden="true">&#936;</span>
+          <div class="symbol__body">
+            <h3 class="symbol__name">Bident</h3>
+            <p class="symbol__desc">A two-pronged staff &mdash; often, and wrongly, confused with Poseidon's trident. The forked shaft signified Hades' dominion over the earth: the boundary that opens beneath the living.</p>
+          </div>
+        </li>
+
+        <li class="symbol symbol--b reveal">
+          <span class="symbol__glyph" aria-hidden="true">&#9788;</span>
+          <div class="symbol__body">
+            <h3 class="symbol__name">Cerberus</h3>
+            <p class="symbol__desc">The three-headed hound. He let every soul enter, but none depart. To pass him living, mortals carried honey-cakes; to pass him at all, mortals first had to be dead.</p>
+          </div>
+        </li>
+
+        <li class="symbol symbol--a reveal">
+          <span class="symbol__glyph" aria-hidden="true">&#9670;</span>
+          <div class="symbol__body">
+            <h3 class="symbol__name">Helm of Darkness <span class="symbol__greek">(Kynée)</span></h3>
+            <p class="symbol__desc">Forged for Hades by the Cyclopes during the Titanomachy. Whoever wore it became invisible. Hermes borrowed it to slay the giant Hippolytus; Athena wore it against Ares; Perseus took it to behead Medusa.</p>
+          </div>
+        </li>
+
+        <li class="symbol symbol--b reveal">
+          <span class="symbol__glyph" aria-hidden="true">&#9760;</span>
+          <div class="symbol__body">
+            <h3 class="symbol__name">Cypress</h3>
+            <p class="symbol__desc">Tall, dark, evergreen. Planted at the entrances of tombs across the Mediterranean world: a tree that does not die in winter, sacred to a god whose kingdom does not end.</p>
+          </div>
+        </li>
+
+        <li class="symbol symbol--a reveal">
+          <span class="symbol__glyph" aria-hidden="true">&#10047;</span>
+          <div class="symbol__body">
+            <h3 class="symbol__name">Narcissus</h3>
+            <p class="symbol__desc">The flower Persephone reached for when the earth opened. It blooms pale and bows its head, and from the day of the abduction it has been the flower of the dead.</p>
+          </div>
+        </li>
+
+        <li class="symbol symbol--b reveal">
+          <span class="symbol__glyph" aria-hidden="true">&#10070;</span>
+          <div class="symbol__body">
+            <h3 class="symbol__name">Pomegranate</h3>
+            <p class="symbol__desc">The fruit of binding. To eat its seed in the Underworld is to belong to it. Six seeds are six months, and the seasons turn on the count.</p>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+
+    <!-- ===================== V · FAMILY ===================== -->
+    <section id="family" class="section section--family">
+      <div class="section__head reveal">
+        <span class="section__num">V</span>
+        <h2 class="section__title">Family &amp; Relationships</h2>
+        <p class="section__lede">A house, a court, a list of enmities &mdash; the people through whom the god is known.</p>
+      </div>
+
+      <!-- Lead plate: Locri Pinax — Hades & Persephone enthroned -->
+      <figure class="section__plate reveal">
+        <div class="section__plate-frame">
+          <img class="plate__img"
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Pinax_with_Persephone_and_Hades_Enthroned%2C_500-450_BC%2C_Greek%2C_Locri_Epizephirii%2C_Mannella_district%2C_Sanctuary_of_Persephone%2C_terracotta_-_Cleveland_Museum_of_Art_-_DSC08242.JPG/1280px-Pinax_with_Persephone_and_Hades_Enthroned%2C_500-450_BC%2C_Greek%2C_Locri_Epizephirii%2C_Mannella_district%2C_Sanctuary_of_Persephone%2C_terracotta_-_Cleveland_Museum_of_Art_-_DSC08242.JPG"
+               alt="Greek terracotta pinax from Locri Epizephirii, 500–450 BCE, showing Persephone and Hades enthroned together as rulers of the Underworld."
+               loading="lazy"
+               decoding="async">
+          <div class="plate__fallback" aria-hidden="true">
+            <span class="plate__kicker">Plate VI</span>
+            <span class="plate__title">Pinax &mdash; Persephone &amp; Hades Enthroned</span>
+            <span class="plate__artist">Greek, Locri Epizephirii (Sanctuary of Persephone)</span>
+            <span class="plate__meta">500&ndash;450 BCE &middot; Cleveland Museum of Art</span>
+          </div>
+        </div>
+        <figcaption class="plate__caption section__plate-caption">
+          <span class="plate__cap-title">Plate VI &middot; <em>Pinax: Persephone &amp; Hades Enthroned</em></span>
+          <span class="plate__cap-credit">Greek, Locri Epizephirii &middot; 500&ndash;450 BCE &middot; Cleveland Museum of Art</span>
+          <span class="plate__cap-license">Photo by Daderot &middot; via Wikimedia Commons, CC0 1.0</span>
+          <span class="plate__cap-note">A terracotta votive from the Sanctuary of Persephone at Locri: the divine couple seated as joint sovereigns. Hades holds a sceptre; Persephone holds an ear of grain.</span>
+        </figcaption>
+      </figure>
+
+      <div class="tree reveal">
+
+        <div class="tree__row tree__row--parents">
+          <div class="tree__node tree__node--parent">
+            <span class="tree__role">Father</span>
+            <span class="tree__name">Cronus</span>
+          </div>
+          <div class="tree__bond" aria-hidden="true">&#10042;</div>
+          <div class="tree__node tree__node--parent">
+            <span class="tree__role">Mother</span>
+            <span class="tree__name">Rhea</span>
+          </div>
+        </div>
+
+        <div class="tree__trunk" aria-hidden="true"></div>
+
+        <div class="tree__row tree__row--siblings">
+          <div class="tree__node tree__node--sib">
+            <span class="tree__role">Sister</span>
+            <span class="tree__name">Hestia</span>
+          </div>
+          <div class="tree__node tree__node--sib">
+            <span class="tree__role">Sister</span>
+            <span class="tree__name">Demeter</span>
+          </div>
+          <div class="tree__node tree__node--sib">
+            <span class="tree__role">Sister</span>
+            <span class="tree__name">Hera</span>
+          </div>
+          <div class="tree__node tree__node--self">
+            <span class="tree__role">Self</span>
+            <span class="tree__name">Hades</span>
+          </div>
+          <div class="tree__node tree__node--sib">
+            <span class="tree__role">Brother</span>
+            <span class="tree__name">Poseidon</span>
+          </div>
+          <div class="tree__node tree__node--sib">
+            <span class="tree__role">Brother</span>
+            <span class="tree__name">Zeus</span>
+          </div>
+        </div>
+
+        <div class="tree__trunk tree__trunk--short" aria-hidden="true"></div>
+
+        <div class="tree__row tree__row--consort">
+          <div class="tree__node tree__node--self">
+            <span class="tree__role">Lord</span>
+            <span class="tree__name">Hades</span>
+          </div>
+          <div class="tree__bond" aria-hidden="true">&#10042;</div>
+          <div class="tree__node tree__node--consort">
+            <span class="tree__role">Consort &middot; daughter of Demeter</span>
+            <span class="tree__name">Persephone</span>
+          </div>
+        </div>
+
+        <div class="tree__divider" aria-hidden="true"></div>
+
+        <div class="tree__group reveal">
+          <p class="tree__group-label">&mdash; of the realm &mdash;</p>
+          <p class="tree__group-list">
+            <span>Charon</span>, <em>ferryman of the Acheron</em> &nbsp;&middot;&nbsp;
+            <span>Thanatos</span>, <em>death</em> &nbsp;&middot;&nbsp;
+            <span>Hypnos</span>, <em>sleep</em> &nbsp;&middot;&nbsp;
+            <span>Hecate</span>, <em>queen of crossroads</em> &nbsp;&middot;&nbsp;
+            <span>The Erinyes</span>, <em>the Furies</em>
+          </p>
+        </div>
+
+        <div class="tree__group reveal">
+          <p class="tree__group-label">&mdash; rivals &amp; adversaries &mdash;</p>
+          <p class="tree__group-list">
+            <span>Apollo</span>, <em>over the slaying of Asclepius</em> &nbsp;&middot;&nbsp;
+            <span>Heracles</span>, <em>who broke into the realm</em> &nbsp;&middot;&nbsp;
+            <span>Sisyphus</span>, <em>who chained Thanatos</em>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===================== VI · MODERN LEGACY ===================== -->
+    <section id="legacy" class="section section--legacy">
+      <div class="section__head reveal">
+        <span class="section__num">VI</span>
+        <h2 class="section__title">Modern Legacy</h2>
+        <p class="section__lede">The god survives in the names of planets, of elements, of eons &mdash; and in the words for the dark.</p>
+      </div>
+
+      <div class="legacy__grid">
+
+        <aside class="legacy__plate reveal">
+          <figure class="plate plate--square">
+            <div class="plate__frame plate__frame--cosmic">
+              <img class="plate__img"
+                   src="https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia19/pia19857/PIA19857.jpg"
+                   alt="Pluto in true color, photographed by NASA's New Horizons spacecraft during the July 2015 flyby: a rust-and-cream world with the pale heart of Tombaugh Regio visible."
+                   loading="lazy"
+                   decoding="async">
+              <div class="plate__fallback" aria-hidden="true">
+                <span class="plate__kicker">Plate VII</span>
+                <span class="plate__title">Pluto, true color</span>
+                <span class="plate__artist">NASA / Johns Hopkins APL / SwRI</span>
+                <span class="plate__meta">New Horizons flyby &middot; July 2015</span>
+              </div>
+            </div>
+            <figcaption class="plate__caption">
+              <span class="plate__cap-title">Plate VII &middot; <em>Pluto, true color</em></span>
+              <span class="plate__cap-credit">NASA / Johns Hopkins APL / SwRI &middot; July 2015</span>
+              <span class="plate__cap-license">Public Domain &middot; NASA Photojournal (PIA19857)</span>
+              <span class="plate__cap-note">The dwarf planet bears Hades' Roman name. The pale heart on its face is Tombaugh Regio.</span>
+            </figcaption>
+          </figure>
+        </aside>
+
+        <div class="legacy__timeline reveal">
+
+          <article class="legacy__entry">
+            <span class="legacy__when">Astronomy</span>
+            <h3 class="legacy__what">Pluto</h3>
+            <p class="prose">The dwarf planet named for the Roman <em>Pl&#363;t&#333;</em>&nbsp;&mdash; &ldquo;the giver of wealth,&rdquo; from the metals and the grain that rise from the earth. Discovered 1930. Re&hyphen;classified 2006. Photographed at last in 2015 by New Horizons.</p>
+          </article>
+
+          <article class="legacy__entry">
+            <span class="legacy__when">Chemistry</span>
+            <h3 class="legacy__what">Plutonium <span class="legacy__sym">(Pu&middot;94)</span></h3>
+            <p class="prose">Named in the chain Uranium &mdash; Neptunium &mdash; Plutonium, after the gods of sky, sea, and underworld. A heavy, radioactive element with a name fit for what it does.</p>
+          </article>
+
+          <article class="legacy__entry">
+            <span class="legacy__when">Geology</span>
+            <h3 class="legacy__what">The Hadean Eon</h3>
+            <p class="prose">Earth's first chapter, 4.6 to 4.0 billion years ago. Molten surface, no atmosphere, no oceans. Named for the god&nbsp;&mdash; a world too hellish to be anywhere else.</p>
+          </article>
+
+          <article class="legacy__entry">
+            <span class="legacy__when">Culture</span>
+            <h3 class="legacy__what">Supergiant's <em>Hades</em> (2020)</h3>
+            <p class="prose">A roguelike retelling the mythology from the perspective of Zagreus, son of Hades, attempting to escape the Underworld. Widely cited as one of the finest mythological video games ever made.</p>
+            <p class="footnote">Game artwork &copy; Supergiant Games. Referenced here in text only, as fair-use.</p>
+          </article>
+
+          <article class="legacy__entry">
+            <span class="legacy__when">Language</span>
+            <h3 class="legacy__what">The words for the dark</h3>
+            <p class="prose">&ldquo;Rich as Hades.&rdquo; &ldquo;The hadal zone,&rdquo; the deepest trenches of the ocean, below six thousand metres. And, through long mistranslation, the English word that has stood in for his kingdom for two thousand years.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== VII · SOURCES ===================== -->
+    <section id="sources" class="section section--sources">
+      <div class="section__head reveal">
+        <span class="section__num">VII</span>
+        <h2 class="section__title">Sources</h2>
+        <p class="section__lede">A bibliography &mdash; primary sources first, by century; modern scholarship beneath.</p>
+      </div>
+
+      <div class="biblio reveal">
+
+        <h3 class="biblio__group">Primary Sources</h3>
+        <ul class="biblio__list">
+          <li>
+            Homer. <em>The Iliad.</em> 8th century BCE.
+            <span class="biblio__note">Cited XV.187&ndash;193 for the division of the cosmos by lot.</span>
+          </li>
+          <li>
+            Hesiod. <em>Theogony.</em> c. 700 BCE.
+            <span class="biblio__note">Cited 453&ndash;506 for the genealogy of the Olympians and the swallowing of the children of Cronus.</span>
+          </li>
+          <li>
+            Anonymous. <em>Homeric Hymn to Demeter.</em> 7th&ndash;6th century BCE.
+            <span class="biblio__note">The foundational narrative of the abduction of Persephone.</span>
+          </li>
+          <li>
+            Apollodorus. <em>Bibliotheca</em> (The Library). 1st&ndash;2nd century CE.
+            <span class="biblio__note">Cited 2.5.12 for the twelfth labour of Heracles.</span>
+          </li>
+          <li>
+            Virgil. <em>Georgics.</em> Book IV. 29 BCE.
+            <span class="biblio__note">Cited 453&ndash;527 for the descent of Orpheus.</span>
+          </li>
+          <li>
+            Ovid. <em>Metamorphoses.</em> 8 CE.
+            <span class="biblio__note">Cited V.385&ndash;571 (Persephone) and X.1&ndash;85 (Orpheus &amp; Eurydice).</span>
+          </li>
+        </ul>
+
+        <h3 class="biblio__group">Secondary Sources</h3>
+        <ul class="biblio__list">
+          <li>
+            Burkert, Walter. <em>Greek Religion.</em> Translated by John Raffan. Cambridge, MA: Harvard University Press, 1985.
+          </li>
+          <li>
+            Hard, Robin. <em>The Routledge Handbook of Greek Mythology.</em> Based on H. J. Rose's <em>Handbook of Greek Mythology.</em> London: Routledge, 2004.
+          </li>
+          <li>
+            Larson, Jennifer. <em>Ancient Greek Cults: A Guide.</em> New York: Routledge, 2007.
+          </li>
+        </ul>
+
+        <h3 class="biblio__group">Images</h3>
+        <ul class="biblio__list biblio__list--images">
+          <li>
+            Carracci, Agostino. <em>Pluto.</em> 1591&ndash;1593. Galleria Estense, Modena.
+            <span class="biblio__note">Hero plate. Photograph via Wikimedia Commons, CC&nbsp;BY-SA&nbsp;4.0.</span>
+          </li>
+          <li>
+            Goya, Francisco de. <em>Saturno devorando a su hijo</em> (Saturn Devouring His Son). 1819&ndash;1823. Museo del Prado, Madrid.
+            <span class="biblio__note">Plate I. Public domain via Wikimedia Commons.</span>
+          </li>
+          <li>
+            Bernini, Gian Lorenzo. <em>The Rape of Proserpina.</em> 1621&ndash;1622. Galleria Borghese, Rome.
+            <span class="biblio__note">Plate II. Photograph by Daderot, via Wikimedia Commons, CC0&nbsp;1.0.</span>
+          </li>
+          <li>
+            Corot, Jean-Baptiste-Camille. <em>Orpheus Leading Eurydice from the Underworld.</em> 1861. Museum of Fine Arts, Houston.
+            <span class="biblio__note">Plate III. Public domain via Wikimedia Commons (Google Art Project).</span>
+          </li>
+          <li>
+            Rubens, Peter Paul. <em>Hercules and Cerberus.</em> c. 1636. Museo del Prado, Madrid.
+            <span class="biblio__note">Plate IV. Public domain via Wikimedia Commons.</span>
+          </li>
+          <li>
+            Andokides Painter (attrib.). Attic black-figure amphora: <em>Heracles and Cerberus.</em> c. 530 BCE. Louvre, Paris (F&nbsp;204).
+            <span class="biblio__note">Plate V. Public domain via Wikimedia Commons.</span>
+          </li>
+          <li>
+            Greek, Locri Epizephirii. <em>Pinax with Persephone and Hades Enthroned.</em> 500&ndash;450 BCE. Cleveland Museum of Art.
+            <span class="biblio__note">Plate VI. Photograph by Daderot, via Wikimedia Commons, CC0&nbsp;1.0.</span>
+          </li>
+          <li>
+            NASA / Johns Hopkins University Applied Physics Laboratory / Southwest Research Institute. <em>Pluto in true color.</em> 14 July 2015.
+            <span class="biblio__note">Plate VII. Public domain &mdash; NASA Photojournal, PIA19857.</span>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__line">
+          <span class="site-footer__mark">HADES</span>
+          <span class="site-footer__sep">&middot;</span>
+          <span>Built by Lumin0usx (Karn Boriboon)</span>
+          <span class="site-footer__sep">&middot;</span>
+          <span>With Claude, Anthropic</span>
+        </p>
+        <p class="site-footer__sub">An exhibit &mdash; no commercial use. Mythological content cross-referenced against primary sources listed above; imagery sourced exclusively from public-domain and openly-licensed archives.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="./main.js" defer></script>
+</body>
+</html>
